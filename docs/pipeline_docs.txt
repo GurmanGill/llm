@@ -1,0 +1,8 @@
+customer_ingestion reads customer records
+from PostgreSQL.
+
+The pipeline writes transformed records
+to silver.customer.
+
+The customer_type column was renamed to
+customer_category on September 1.
