@@ -26,5 +26,5 @@ def call_open_ai(
 
 for temp in [0.0, 0.3, 0.7, 0.9, 1.2]:
 
-    print(call_open_ai('Explain spark data skew?'))
+    print(call_open_ai('What is apple?'))
     print( '#' * 200)
