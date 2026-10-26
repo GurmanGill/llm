@@ -2,3 +2,7 @@ openai
 python-dotenv
 ollama
 pydantic
+numpy
+chromadb 
+psycopg[binary]
+pgvector

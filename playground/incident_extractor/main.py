@@ -1,6 +1,6 @@
 from openai import OpenAI
 from dotenv import load_dotenv
-from models import Incident
+from llm.playground.incident_extractor.models import Incident
 from pprint import pp 
 import os
 
