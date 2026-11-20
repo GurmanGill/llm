@@ -3,8 +3,8 @@ import psycopg
 from pgvector.psycopg import register_vector
 
 #Vars
-EMBEDDING_MODEL = "nomic-embed_text"
-DB_URL = ("postgresql://dou1939:postgres@localhost:5432/vector_lab")
+EMBEDDING_MODEL = "nomic-embed-text"
+DB_URL = ("postgresql://postgres:postgres@localhost:5434/vector_lab")
 
 #Text
 documents = {
@@ -79,7 +79,7 @@ def get_embedding(
         input=text
     )
 
-    return response['embeddings'][0]
+    return response['embeddings'][0] 
 
 with psycopg.connect(DB_URL) as conn:
     register_vector(conn)
@@ -100,7 +100,7 @@ with psycopg.connect(DB_URL) as conn:
                     content,
                     embedding
                     )
-                    VALUES (%s %s %s %s)
+                    VALUES (%s, %s, %s, %s)
                     ON CONFLICT(document_id, chunk_index)
                     DO UPDATE SET
                         content=EXCLUDED.content,
